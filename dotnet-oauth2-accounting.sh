@@ -4,7 +4,7 @@ set -euxo pipefail
 SCRIPT="$0"
 echo "# START SCRIPT: $SCRIPT"
 
-./openapi-generator-check.sh || exit 1
+#./openapi-generator-check.sh || exit 1
 
 # remote yaml on github branch "oauth"
 ags="generate 
