@@ -12,4 +12,4 @@ jobs:
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
-        args: ./generator/scripts/ci.sh
+        args: ./ci.sh
