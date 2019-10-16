@@ -1,0 +1,15 @@
+name: ci
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: generate csharp
+      uses: docker://openapitools/openapi-generator-cli
+      with:
+        args: ./generator/scripts/ci.sh
