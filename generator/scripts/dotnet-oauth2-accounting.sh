@@ -1,4 +1,5 @@
-#!/bin/sh
+#!/bin/bash
+set -euxo pipefail
 
 SCRIPT="$0"
 echo "# START SCRIPT: $SCRIPT"
