@@ -12,7 +12,7 @@ ags="generate
 -i https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/oauth2/accounting-yaml/Xero_accounting_2.0.0_swagger.yaml 
 -g csharp-netcore
 -o ./generator/output/csharp-netcore/accounting
--c ./generator/dotnet-oauth2-accounting.json 
+-c ./dotnet-oauth2-accounting.json 
 -D debugModels=false
 -D hideGenerationTimestamp=true
 $@"
@@ -27,3 +27,4 @@ find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xe
 find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/string? /string /g" {} +
 find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/DateTime?? /DateTime? /g" {} +
 find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/List<string>? /List<string> /g" {} +
+ls
