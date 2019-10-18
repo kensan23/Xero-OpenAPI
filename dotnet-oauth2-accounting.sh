@@ -13,8 +13,8 @@ ags="generate
 -g csharp-netcore
 -o ./generator/output/csharp-netcore/accounting
 --additional-properties=packageName=Xero.NetStandard.OAuth2,packageVersion=0.0.1,targetFramework=netstandard2.0
--D debugModels=false
--D hideGenerationTimestamp=true
+-p debugModels=false
+-p hideGenerationTimestamp=true
 $@"
 
 echo "Removing files and folders under output/output/csharp-netcore"
