@@ -9,10 +9,9 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     
-    - uses: actions/checkout@v1
+    - name: testclone
       if: success()
-      with:
-        repository: XeroAPI/Xero-NetStandard
+      run: git clone https://github.com/kensan23/Xero-NetStandard.git
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
