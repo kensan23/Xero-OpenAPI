@@ -22,4 +22,4 @@ jobs:
       if: success()
       run: |
           cd generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2
-          dotnet build
+          sudo dotnet build
