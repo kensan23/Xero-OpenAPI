@@ -10,6 +10,7 @@ jobs:
     - uses: actions/checkout@v1
     
     - uses: actions/checkout@v1
+      id: success()
       with:
         repository: XeroAPI/Xero-NetStandard
     - name: generate csharp
