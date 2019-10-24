@@ -27,5 +27,6 @@ openapi-generator $ags
 #find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/string? /string /g" {} +
 #find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/DateTime?? /DateTime? /g" {} +
 #find ./generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/List<string>? /List<string> /g" {} +
+ls
 cd generator/output/csharp-netcore/accounting/
 ls
