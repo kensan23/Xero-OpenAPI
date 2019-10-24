@@ -17,7 +17,11 @@ jobs:
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
-        args: ./ci.sh
+        args: ./ci.sh    
+    - uses: actions/upload-artifact@master
+      with:
+        name: my-artifact
+        path: generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2
     - name: build project
       if: success()
       run: |
