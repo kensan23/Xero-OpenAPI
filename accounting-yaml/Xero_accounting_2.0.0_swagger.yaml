@@ -17600,7 +17600,7 @@ paths:
       parameters:
         - required: true
           in: path
-          name: TrackingCategoryID
+          name: TrackingCategoryIDName
           description: Unique identifier for a TrackingCategory
           schema:
             type: string
