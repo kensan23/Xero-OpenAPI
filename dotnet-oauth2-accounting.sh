@@ -24,7 +24,8 @@ openapi-generator $ags
 pwd
 find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 rm -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/project.json
-sed -i "" -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
+sed  -e '/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
+#sed -i "" -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 #sed -i '' -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 #find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/project.json -type f -exec rm -rf {} \;
 #find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj -type f | sed -i '' -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" {}; 
