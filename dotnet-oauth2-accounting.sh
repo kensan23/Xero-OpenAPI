@@ -25,5 +25,5 @@ rm -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/pr
 sed -e '/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 sed -e 's/<TargetFrameworkVersion>v2.0<\/TargetFrameworkVersion>/<TargetFramework>netstandard2.0<\/TargetFramework>/g' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Model/*.cs -type f | xargs sed -e 's/string? /string /g' -i
-find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Model/*.cs -type f | xargs sed -e 's/DateTime?? /DateTime?' /g -i
+find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Model/*.cs -type f | xargs sed -e 's/DateTime?? /DateTime? /g' -i
 find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Model/*.cs -type f | xargs sed -e 's/List<string>? /List<string> /g' -i
