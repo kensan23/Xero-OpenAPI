@@ -21,15 +21,9 @@ echo "Removing files and folders under output/output/csharp-netcore"
 rm -rf ./generator/output/csharp-netcore/accounting
 openapi-generator $ags  
 # hacky way of fixing some things without editing the templating engine
-pwd
-find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
 rm -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/project.json
-sed  -e '/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
-#sed -i "" -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
-#sed -i '' -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/project.json -type f -exec rm -rf {} \;
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj -type f | sed -i '' -e "/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d" {}; 
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj -type f -exec sed -i '' -e "s/<TargetFrameworkVersion>v2.0<\/TargetFrameworkVersion>/<TargetFramework>netstandard2.0<\/TargetFramework>/g" {}; 
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/string? /string /g" {};
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/DateTime?? /DateTime? /g" {}; 
-#find generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/ -type f -exec sed -i '' -e "s/List<string>? /List<string> /g" {}; 
+sed -e '/<TargetFrameworkIdentifier>.NETStandard<\/TargetFrameworkIdentifier>/d' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
+sed -e 's/<TargetFrameworkVersion>v2.0<\/TargetFrameworkVersion>/<TargetFramework>netstandard2.0<\/TargetFramework>/g' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/Xero.NetStandard.OAuth2.csproj
+sed -e 's/string? /string /g' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/
+sed -e 's/DateTime?? /DateTime? /g' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/
+sed -e 's/List<string>? /List<string> /g' -i generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2/model/
