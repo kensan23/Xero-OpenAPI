@@ -8,8 +8,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: test
-      run: echo $GITHUB_ACTION
     - uses: actions/setup-dotnet@v1
       with:
            dotnet-version: '2.2.103' 
@@ -40,10 +38,10 @@ jobs:
           ls
           git config --global user.email "test@example.com"
           git config --global user.name "OpenApi Bot"
-          git checkout -b openapi
+          git checkout -b openapi-${GITHUB_SHA::8}
           git add -A
           git commit -m "Changes from OpenAPI update"
-          git push -u https://jenksguo:${{ secrets.TESTTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi
+          git push -u https://jenksguo:${{ secrets.TESTTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi-${GITHUB_SHA::8}
           
           
           
