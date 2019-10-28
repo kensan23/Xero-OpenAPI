@@ -23,7 +23,8 @@ jobs:
       run: |
           cd generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2
           sudo dotnet build
-    - uses: actions/upload-artifact@master
-      with:
-        name: Xero.NetStandard.OAuth2
-        path: generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2
+    - name: Copy project
+      if: success()
+      run: |
+          cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
+
