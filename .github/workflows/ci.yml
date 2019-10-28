@@ -41,7 +41,7 @@ jobs:
           git checkout -b openapi-${GITHUB_SHA::8}
           git add -A
           git commit -m "Changes from OpenAPI update"
-          git push -u https://jenksguo:${{ secrets.TESTTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi-${GITHUB_SHA::8}
+          git push -u https://kensan23:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi-${GITHUB_SHA::8}
           
           
           
