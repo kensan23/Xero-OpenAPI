@@ -41,7 +41,7 @@ jobs:
           git checkout -b openapi
           git add -A
           git commit -m "Changes from OpenAPI update"
-          git push https://kensan23:{{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git -u origin openapi
+          git push -u https://kensan23:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi
           
           
           
