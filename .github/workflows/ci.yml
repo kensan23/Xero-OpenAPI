@@ -26,13 +26,11 @@ jobs:
     - name: Copy project
       if: success()
       run: |
-          cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
-    - name: Create PR on NetStandard
-      uses: actions/checkout@v1
-      if: success()
+          sudo cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
     - name: check digff
       if: success()
       run: |
           cd Xero-NetStandard/
-          ls
+          git diff
+          
 
