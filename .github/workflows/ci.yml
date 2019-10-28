@@ -15,6 +15,7 @@ jobs:
       if: success()
       run: |
             git clone https://github.com/kensan23/Xero-NetStandard.git
+            cd Xero-NetStandard/
             git checkout oauth2
             git pull
             pwd
