@@ -27,4 +27,12 @@ jobs:
       if: success()
       run: |
           cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
+    - name: Create PR on NetStandard
+      uses: actions/checkout@v1
+      if: success()
+    - name: check digff
+      if: success()
+      run: |
+          cd Xero-NetStandard/
+          ls
 
