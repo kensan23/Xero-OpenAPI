@@ -27,10 +27,11 @@ jobs:
       if: success()
       run: |
           sudo cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
-    - name: check digff
+    - name: check difff
       if: success()
       run: |
           cd Xero-NetStandard/
+          ls
           git diff
           
 
