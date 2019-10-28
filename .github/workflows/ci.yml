@@ -38,10 +38,10 @@ jobs:
           ls
           git config --global user.email "test@example.com"
           git config --global user.name "OpenApi Bot"
-          git checkout -b OpenApi
+          git checkout -b openapi
           git add -A
           git commit -m "Changes from OpenAPI update"
-          git push -u origin OpenApi
+          git push -u origin openapi
           
           
           
