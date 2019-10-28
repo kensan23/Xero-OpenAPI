@@ -17,6 +17,7 @@ jobs:
             git clone https://github.com/kensan23/Xero-NetStandard.git
             git checkout oauth2
             git pull
+            pwd
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
