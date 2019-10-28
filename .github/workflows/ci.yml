@@ -8,6 +8,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
+    - name: test
+      run: echo $GITHUB_ACTION
     - uses: actions/setup-dotnet@v1
       with:
            dotnet-version: '2.2.103' 
