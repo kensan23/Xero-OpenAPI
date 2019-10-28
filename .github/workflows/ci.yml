@@ -13,7 +13,10 @@ jobs:
            dotnet-version: '2.2.103' 
     - name: Clone Xero-NetStandard
       if: success()
-      run: git clone https://github.com/kensan23/Xero-NetStandard.git
+      run: |
+            git clone https://github.com/kensan23/Xero-NetStandard.git
+            git checkout oauth2
+            git pull
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
