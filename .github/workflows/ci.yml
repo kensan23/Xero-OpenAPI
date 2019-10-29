@@ -38,10 +38,10 @@ jobs:
           ls
           git config --global user.email "test@example.com"
           git config --global user.name "OpenApi Bot"
-          git checkout -b openapi-${GITHUB_SHA::7}
+          git checkout -b openapi/${GITHUB_SHA::7}
           git add -A
           git commit -m "Changes from OpenAPI update"
-          git push -u https://kensan23:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi-${GITHUB_SHA::7}
+          git push -u https://kensan23:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi/${GITHUB_SHA::7}
           
           
           
