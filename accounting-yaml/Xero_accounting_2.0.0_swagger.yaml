@@ -152,7 +152,7 @@ paths:
         - OAuth2: [accounting.settings]
       tags:
         - Accounting
-      operationId: getAccount
+      operationId: getAccountTestBlah
       summary: Allows you to retrieve a single chart of accounts
       parameters:
         - required: true
