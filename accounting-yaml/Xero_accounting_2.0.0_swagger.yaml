@@ -19,7 +19,7 @@ paths:
         - OAuth2: [accounting.settings]
       tags:
         - Accounting
-      operationId: getChartOfAccounts
+      operationId: getChartAccounts
       summary: Allows you to retrieve the full chart of accounts
       parameters:
         - in: header
