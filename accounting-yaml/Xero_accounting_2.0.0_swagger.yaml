@@ -73,7 +73,7 @@ paths:
         - OAuth2: [accounting.settings]
       tags:
         - Accounting
-      operationId: createAccount
+      operationId: createAccountTest
       summary: Allows you to create a new chart of accounts
       responses:
         '200':
