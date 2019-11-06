@@ -19,7 +19,7 @@ jobs:
             git checkout oauth2
             git pull
     - name: generate csharp
-      uses: docker://openapitools/openapi-generator-cli
+      uses: docker://openapitools/openapi-generator-cli:v4.2.0
       with:
         args: ./generator/scripts/ci.sh    
     - name: build project
