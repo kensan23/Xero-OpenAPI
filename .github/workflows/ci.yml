@@ -21,7 +21,7 @@ jobs:
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli
       with:
-        args: ./ci.sh    
+        args: ./generator/scripts/ci.sh    
     - name: build project
       if: success()
       run: |
@@ -35,7 +35,6 @@ jobs:
       if: success()
       run: |
           cd Xero-NetStandard/
-          ls
           git config --global user.email "test@example.com"
           git config --global user.name "OpenApi Bot"
           git checkout -b openapi/${GITHUB_SHA::7}
