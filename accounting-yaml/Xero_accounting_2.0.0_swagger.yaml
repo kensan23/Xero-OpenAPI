@@ -39,6 +39,11 @@ paths:
           description: Order by an any element
           schema:
             type: string
+        - in: query
+          name: test
+          description: test this out
+          schema:
+            type: string
       responses:
         '200':
           description: Success - return response of type Accounts array with 0 to n Account 
