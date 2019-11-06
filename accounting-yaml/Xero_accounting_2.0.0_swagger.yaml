@@ -19,7 +19,7 @@ paths:
         - OAuth2: [accounting.settings]
       tags:
         - Accounting
-      operationId: getChartAccounts
+      operationId: getAccountsChart
       summary: Allows you to retrieve the full chart of accounts
       parameters:
         - in: header
@@ -18677,4 +18677,4 @@ components:
           description: Displays which contact groups a contact is included in
           type: array
           items:
-            $ref: '#/components/schemas/ContactGrou
+            $ref: '#/components/schemas/Contac
