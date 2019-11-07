@@ -10,7 +10,9 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-dotnet@v1
       with:
-           dotnet-version: '2.2.103' 
+           dotnet-version: '2.2.103'
+    - name: Setup Hub
+      uses: Geertvdc/setup-hub@v1.0.0
     - name: Clone Xero-NetStandard
       if: success()
       run: |
@@ -33,6 +35,9 @@ jobs:
           sudo cp -rf generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2 Xero-NetStandard/
     - name: create branch
       if: success()
+      env:
+        GITHUB_USER: ${GITHUB_ACTOR}
+        GITHUB_TOKEN: ${{ secrets.ACCESSTOKEN }}
       run: |
           cd Xero-NetStandard/
           git config --global user.name "${GITHUB_ACTOR}"
@@ -41,6 +46,8 @@ jobs:
           git add -A
           git commit -m "Changes from OpenAPI update"
           git push -u https://x-access-token:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi/${GITHUB_SHA::7}
+          hub pull-request
+          
           
           
           
