@@ -46,7 +46,6 @@ jobs:
           git add -A
           git commit -m "Changes from OpenAPI update"
           git push -u https://x-access-token:${{ secrets.ACCESSTOKEN }}@github.com/kensan23/Xero-NetStandard.git openapi/${GITHUB_SHA::7}
-          hub pull-request
           
           
           
