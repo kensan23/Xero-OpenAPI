@@ -1,6 +1,11 @@
 name: ci
 
-on: [push]
+on:
+  push:
+    paths: 
+      - 'accounting-yaml/**'
+      - 'bankfeeds-yaml/**'
+      - 'identity-yaml/**'
 
 jobs:
   build:
