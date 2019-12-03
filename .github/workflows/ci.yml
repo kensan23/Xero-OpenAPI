@@ -1,4 +1,4 @@
-name: ci
+name: CSharp Xero SDK generator
 
 on:
   push:
