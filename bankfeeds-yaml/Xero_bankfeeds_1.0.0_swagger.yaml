@@ -4,7 +4,7 @@ info:
   title: Bank Feeds API
   description: The Xero Bank Feeds API 
   contact: 
-    name: x Xero API team
+    name: Xero API team
     email: api@xero.com
   license:
     name: MIT 
