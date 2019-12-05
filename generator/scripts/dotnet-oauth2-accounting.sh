@@ -12,7 +12,7 @@ ags="generate
 -i https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/oauth2/accounting-yaml/Xero_accounting_2.0.0_swagger.yaml 
 -g csharp-netcore
 -o ./generator/output/csharp-netcore/accounting
---additional-properties=packageName=Xero.NetStandard.OAuth2,packageVersion=0.0.1,targetFramework=netstandard2.0
+-c dotnet-oauth2-accounting.json
 -p debugModels=false
 -p hideGenerationTimestamp=true
 $@"
