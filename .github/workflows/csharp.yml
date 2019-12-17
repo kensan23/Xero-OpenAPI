@@ -28,7 +28,7 @@ jobs:
     - name: generate csharp
       uses: docker://openapitools/openapi-generator-cli:v4.2.0
       with:
-        args: ./generator/scripts/ci.sh    
+        args: ./generator/scripts/csharp/csharp.sh    
     - name: build project
       if: success()
       run: |
