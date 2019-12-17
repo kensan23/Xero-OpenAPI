@@ -12,12 +12,12 @@ ags="generate
 -i https://raw.githubusercontent.com/XeroAPI/Xero-OpenAPI/oauth2/accounting-yaml/Xero_accounting_2.0.0_swagger.yaml 
 -g csharp-netcore
 -o ./generator/output/csharp-netcore/accounting
--c ./generator/scripts/dotnet-oauth2-accounting.json
+-c ./generator/scripts/csharp/dotnet-oauth2-accounting.json
 -p debugModels=false
 -p hideGenerationTimestamp=true
 $@"
 
-echo "Removing files and folders under output/output/csharp-netcore"
+echo "Removing files and folders under /output/csharp-netcore"
 rm -rf ./generator/output/csharp-netcore/accounting
 openapi-generator $ags  
 # hacky way of fixing some things without editing the templating engine
