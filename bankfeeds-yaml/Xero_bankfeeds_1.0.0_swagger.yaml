@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
   version: "1.0.0"
-  title: Xero Bank Feeds API
+  title: Xero  Bank Feeds API
   description: The Xero Bank Feeds API 
   contact: 
     name: Xero API team
