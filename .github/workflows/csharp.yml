@@ -1,8 +1,8 @@
 name: CSharp Xero SDK generator
 
 on:
-  release:
-    types: [published, created, edited]
+  push:
+    branches: 'master'
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
       if: success()
       with:
        name: Xero.NetStandard.OAuth2
-       path: generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2      
+       path: generator/output/csharp-netcore    
     - name: Copy project
       if: success()
       run: |
