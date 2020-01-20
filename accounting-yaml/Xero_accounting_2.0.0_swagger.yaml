@@ -6788,12 +6788,21 @@ paths:
         - OAuth2: [accounting.transactions]
       tags:
         - Accounting
+      operationId: updateOrCreateInvoices
+      summary: Allows you to update OR create one or more sales invoices or purchase bills
+      parameters:
+        - in: query
+          name: summarizeErrors
+          description: shows validation errors for each credit note
+          schema:
+            type: boolean
             default: false
       responses:
         '200':
           description: Success - return response of type Invoices array with newly created Invoice
           content:
             application/json:
+              schema:
                 $ref: '#/components/schemas/Invoices'
               example: '{
                           "Id": "ccece84a-075c-4fcd-9073-149d4f7a91cf",
