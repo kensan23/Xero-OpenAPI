@@ -30,7 +30,7 @@ jobs:
     - name: build project
       if: success()
       run: |
-          cd generator/output/csharp-netcore/accounting/src/Xero.NetStandard.OAuth2
+          cd generator/output/csharp-netcore/accounting/
           sudo dotnet build
     - uses: actions/upload-artifact@v1
       if: success()
