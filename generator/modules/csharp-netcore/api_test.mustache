@@ -7,6 +7,8 @@ using System.Linq;
 using System.Reflection;
 using RestSharp;
 using Xunit;
+using System.Threading.Tasks;
+using AutoBogus;
 
 using {{packageName}}.Client;
 using {{packageName}}.{{apiPackage}};
@@ -26,9 +28,17 @@ namespace {{packageName}}.Test
     {
         private {{classname}} instance;
 
+        private const string accessToken = "XeroNetStandardTestAccessToken";
+
+        private const string xeroTenantId = "XeroNetStandardTestTenantId";
+
         public {{classname}}Tests()
         {
-            instance = new {{classname}}();
+            var directory = Directory.GetCurrentDirectory();
+            var configuration = TestHelper.GetApplicationConfiguration(directory);
+            var config = new Xero.NetStandard.OAuth2.Client.Configuration();
+            config.BasePath = configuration.AccountingBaseUrl;
+            instance = new {{classname}}(config);
         }
 
         public void Dispose()
@@ -51,13 +61,13 @@ namespace {{packageName}}.Test
         /// Test {{operationId}}
         /// </summary>
         [Fact]
-        public void {{operationId}}Test()
+        public async Task {{operationId}}Test()
         {
             // TODO uncomment below to test the method and replace null with proper value
             {{#allParams}}
-            //{{{dataType}}} {{paramName}} = null;
+            {{{dataType}}} {{paramName}} = AutoFaker.Generate<{{{dataType}}}>();
             {{/allParams}}
-            //{{#returnType}}var response = {{/returnType}}instance.{{operationId}}Async({{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+            //{{#returnType}}var response = await {{/returnType}}instance.{{operationId}}Async(accessToken, {{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
             {{#returnType}}//Assert.IsType<{{{returnType}}}> (response);{{/returnType}}
         }
         {{/operation}}{{/operations}}

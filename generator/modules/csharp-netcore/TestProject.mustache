@@ -31,19 +31,22 @@
       <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
       <PackageReference Include="RestSharp" Version="106.6.7" />
       <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+      <PackageReference Include="Microsoft.Extensions.Configuration" Version="*"/>
+      <PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="3.1.0"/>
+      <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.0"/>
+      <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.0"/>
+      <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="3.1.0"/>
+      <PackageReference Include="AutoBogus" Version="2.7.4"/>
+
   </ItemGroup>
-  <Import Project="..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" />
   <ItemGroup>
       <ProjectReference Include="..\{{packageName}}\{{packageName}}.csproj">
           <Project>{{packageGuid}}</Project>
           <Name>{{packageName}}</Name>
       </ProjectReference>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-      <PropertyGroup>
-          <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
-      </PropertyGroup>
-      <Error Condition="!Exists('..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\NETStandard.Library.2.0.3\build\netstandard2.0\NETStandard.Library.targets'))" />
-  </Target>
 </Project>
 
