@@ -1,8 +1,9 @@
 name: CSharp Xero SDK generator
 
 on:
-  release:
-    types: [published, created, edited]
+  push:
+    branches: 
+      - 'master'
 
 jobs:
   build:
