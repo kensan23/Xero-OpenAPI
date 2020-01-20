@@ -67,8 +67,8 @@ namespace {{packageName}}.Test
             {{#allParams}}
             {{{dataType}}} {{paramName}} = AutoFaker.Generate<{{{dataType}}}>();
             {{/allParams}}
-            //{{#returnType}}var response = await {{/returnType}}instance.{{operationId}}Async(accessToken, {{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
-            {{#returnType}}//Assert.IsType<{{{returnType}}}> (response);{{/returnType}}
+            {{#returnType}}var response = await {{/returnType}}instance.{{operationId}}Async(accessToken, {{#allParams}}{{paramName}}{{#hasMore}}, {{/hasMore}}{{/allParams}});
+            {{#returnType}}Assert.IsType<{{{returnType}}}> (response);{{/returnType}}
         }
         {{/operation}}{{/operations}}
     }
